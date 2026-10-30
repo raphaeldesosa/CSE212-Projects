@@ -13,7 +13,17 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        //Step1: Create a double array with length slots
+        //Step2: start the loop with index at 0; loop while index is less than the length and add 1 to index for each loop while true
+        //Step3: On each loop, we multiply number by index + 1 and store it in the slot at the current index
+        //Step4: Then we return the array
+        double[] results = new double[length];
+        for (int i = 0; i < length; i++)
+        {
+            results[i] = number * (i + 1);
+        }
+
+        return results; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +39,17 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        //Step1:Make a for loop that will repeat the amount times. Start by making index 0; loop while index is less than amount; then adding 1 to the index after each loop
+        //Step2:Create a variable where we will store the last item of the list which will be data[data.Count - 1]
+        //Step3:Remove the last item from the list
+        //Step4:Insert the item at the first index
+
+        for (int i = 0; i < amount; i++)
+        {
+            int last = data[data.Count - 1];
+            data.RemoveAt(data.Count - 1);
+            data.Insert(0, last);
+        }
     }
 }
