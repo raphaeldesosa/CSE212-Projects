@@ -29,8 +29,15 @@ public class Basketball
             var points = int.Parse(fields[8]);
         }
 
-        Console.WriteLine($"Players: {{{string.Join(", ", players)}}}");
+        // Console.WriteLine($"Players: {{{string.Join(", ", players)}}}");
 
-        var topPlayers = new string[10];
+        var topPlayers = players.ToArray();
+        Array.Sort(topPlayers, (p1, p2) => p2.Value - p1.Value);
+
+        Console.WriteLine();
+        for (var i = 0; i < 10; ++i)
+        {
+            Console.WriteLine(topPlayers[i]);
+        }
     }
 }
